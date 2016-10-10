@@ -36,7 +36,7 @@ function gera(){
 
             stmtFinal = descritores;
 
-            var sinonimos = taSin.value.split(",");
+            var sinonimos = taSin.value.split(";");
 
             if (sinonimos.length != 0) {
                 
@@ -46,7 +46,7 @@ function gera(){
                 }
             }
 
-            var categorias = taCat.value.split(",");
+            var categorias = taCat.value.split(";");
         
             if (categorias.length != 0) {
                 for(i = 0; i < categorias.length; i++){
