@@ -38,7 +38,7 @@ function gera(){
 
             var sinonimos = taSin.value.split(";");
 
-            if (sinonimos.length != 0) {
+            if ((sinonimos.length != 0) && (taSin.value.trim() != "")) {
                 
                 for(i = 0; i < sinonimos.length; i++){
                     var verificada = sinonimos[i].trim();
@@ -48,7 +48,7 @@ function gera(){
 
             var categorias = taCat.value.split(";");
         
-            if (categorias.length != 0) {
+            if ((categorias.length != 0) && (taCat.value.trim() != "")) {
                 for(i = 0; i < categorias.length; i++){
                     var verificada = categorias[i].trim();
                     stmtFinal = stmtFinal + ' OR (mh:' + verificada + '$)';
