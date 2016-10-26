@@ -59,6 +59,37 @@ function gera(){
     }
 }
 
+function geraPb(){
+    
+    var descIng = document.getElementById("pbdescing").value.trim();
+    var taSin = document.getElementById("pbtasin");
+    var taRes = document.getElementById("pbtares");
+    
+    if (descIng === ""){
+        alert("Por favor preencha o descritor!")
+    } else {
+        document.getElementById("pbtares").value = "";
+        var descritores = "";
+        var stmtFinal = "";
+
+
+            stmtFinal = '"' + descIng + '"[Mesh] OR (' + descIng + ')';
+
+            var sinonimos = taSin.value.split(";");
+
+            if ((sinonimos.length != 0) && (taSin.value.trim() != "")) {
+                
+                for(i = 0; i < sinonimos.length; i++){
+                    var verificada = sinonimos[i].trim();
+                    stmtFinal = stmtFinal + ' OR (' + verificada + ')';
+                }
+            }
+
+
+            taRes.value = stmtFinal;
+    }
+}
+
 function limpa() {
     document.getElementById("descpt").value = "";
     document.getElementById("descesp").value = "";
@@ -66,4 +97,10 @@ function limpa() {
     document.getElementById("tasin").value = "";
     document.getElementById("tacat").value = "";
     document.getElementById("tares").value = "";
+}
+
+function limpaPb() {
+    document.getElementById("pbdescing").value = "";
+    document.getElementById("pbtasin").value = "";
+    document.getElementById("pbtares").value = "";
 }
